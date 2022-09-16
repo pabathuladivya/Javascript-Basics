@@ -1,0 +1,220 @@
+<html>
+
+
+
+<head>
+    <title>
+        JavaScript CRUD
+    </title>
+    
+</head>
+
+
+
+<body>
+
+
+
+   <h1><center>JavaScript CRUD </center></h1>
+    <hr>
+            <div class="employee-form">
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label> Name*</label><label class="validation-error hide">This field is required.</label>
+                        <input type="text" id="name" name="name"/></br>
+                    </div>
+                    <div>
+                        <label>Phone</label>
+                        <input type="number" id="mobile" name="mobile"/></br>
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        :<input type="text" id="email" name="email"/>
+                        <span id="v3"></span></br>
+                    </div>
+                    <div>
+                        <label>Country</label>
+                       <select id="country" placeholder="select one" name="country">Country</select>
+                    </div>
+                    <div>
+                    State<select id="state" name="state">State</select>
+                    </div>
+                    <div>
+                    City<select id="city" name="city">City</select></br>
+                    </div>
+                    <div>
+                    date of birth<input type="date" id="date" name="date"/></br>
+                    </div>
+                    <div>
+                    web URL<input type="text"  id="web" name="web"/></br>
+                    </div>
+                    <div  class="form-action-buttons">
+                     <input type="submit" value="Submit">
+                    </div>
+                </form>
+        </div>
+        <br/>
+        <div class = "employees-table" >
+                <table class="list" id="table1" border="2">
+                    <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Mobile</th>
+                          <th>Email</th>
+                          <th>Country</th>
+                          <th>State</th>
+                          <th>City</th>
+                          <th>Dateofbirth</th>
+                          <th>Web URL</th>                          
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+
+                   </tbody>
+                </table>
+        </div>
+    <script>
+      var selectedRow = null
+      let countrystate={
+    "India":{
+        "Telangana":["Nirmal","Adilabad","Nizmabad"],
+        "Andhrapradesh":["Karnul","Vijayavada"],
+    },
+    "USA":{
+        "ABCD":["bjbjh","jkhgjb"],
+        "kjhsdh":["klasjkj","jhdjsh"]
+    }
+}
+window.onload=function(){
+    let countrysel=document.getElementById('country');
+    let statesel=document.getElementById('state');
+    let citysel=document.getElementById('city');
+    for(let x in countrystate){
+        countrysel.options[countrysel.options.length]=new Option(x,x);
+    }
+    countrysel.onchange=function(){
+        statesel.length=1;
+        citysel.length=1;
+        for(let y in countrystate[this.value]){
+            statesel.options[statesel.options.length]=new Option(y,y);
+        }
+    }
+    statesel.onchange=function(){
+        citysel.length=1;
+        let z=countrystate[countrysel.value][this.value];
+        for(let i=0;i<z.length;i++){
+            citysel.options[citysel.options.length]=new Option(z[i],z[i])
+        }
+    }
+}
+document.getElementById('table1').hidden=true;
+function onFormSubmit() {
+document.getElementById('table1').hidden=false;
+    if (validate()) {
+        var formData = readFormData();
+        if (selectedRow == null)
+            insertNewRecord(formData);
+            
+           else
+            updateRecord(formData);
+            resetForm();
+            
+    }
+}
+function readFormData() {
+    var formData = {};
+    formData["name"] = document.getElementById("name").value;
+    formData["mobile"] = document.getElementById("mobile").value;
+    formData["email"] = document.getElementById("email").value;
+    formData["country"] = document.getElementById("country").value;
+    formData["state"] = document.getElementById("state").value;
+    formData["city"] = document.getElementById("city").value;
+    formData["date"] = document.getElementById("date").value;
+    formData["web"] = document.getElementById("web").value;
+    return formData;
+}
+function insertNewRecord(data) {
+    var table = document.getElementById("table1").getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow(table.length);
+     enteredDate = document.getElementById('date').value;  
+  let years = new Date(new Date() - new Date(enteredDate)).getFullYear() - 1970;
+    cell1 = newRow.insertCell(0);
+    cell1.innerHTML = data.name;
+    cell2 = newRow.insertCell(1);
+    cell2.innerHTML = data.mobile;
+    cell3 = newRow.insertCell(2);
+    cell3.innerHTML = data.email;
+    cell4 = newRow.insertCell(3);
+    cell4.innerHTML = data.country;
+    cell5 = newRow.insertCell(4);
+    cell5.innerHTML = data.state;
+    cell6 = newRow.insertCell(5);
+    cell6.innerHTML = data.city;   
+    cell7 = newRow.insertCell(6);
+    cell7.innerHTML = years;
+    cell8 = newRow.insertCell(7);
+    cell8.innerHTML = data.web;
+    cell9 = newRow.insertCell(8);
+    cell9.innerHTML = `<a onClick="onEdit(this)">Edit</a>
+                       <a onClick="onDelete(this)">Delete</a>`;
+}
+function resetForm() {
+    document.getElementById("name").value = "";
+    document.getElementById("mobile").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("country").value = "";
+    document.getElementById("state").value = "";
+    document.getElementById("city").value = "";
+    document.getElementById("date").value = "";
+    document.getElementById("web").value = "";
+    selectedRow = null;
+}
+
+
+
+function onEdit(td) {
+    selectedRow = td.parentElement.parentElement;
+    document.getElementById("name").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("mobile").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("email").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("country").value = selectedRow.cells[3].innerHTML;
+    document.getElementById("state").value = selectedRow.cells[4].innerHTML;
+    document.getElementById("city").value = selectedRow.cells[5].innerHTML;
+    document.getElementById("date").value = selectedRow.cells[6].innerHTML;
+    document.getElementById("web").value = selectedRow.cells[7].innerHTML;
+        
+}
+function updateRecord(formData) {
+    selectedRow.cells[0].innerHTML = formData.name;
+    selectedRow.cells[1].innerHTML = formData.mobile;
+    selectedRow.cells[2].innerHTML = formData.email;
+    selectedRow.cells[3].innerHTML = formData.country;
+    selectedRow.cells[4].innerHTML = formData.state;
+    selectedRow.cells[5].innerHTML = formData.city;
+    selectedRow.cells[6].innerHTML = formData.years;
+    selectedRow.cells[7].innerHTML = formData.web;
+}
+
+
+
+function onDelete(td) {
+    if (confirm('Are you sure to delete this record ?')) {
+        row = td.parentElement.parentElement;
+        document.getElementById("table").deleteRow(row.rowIndex);
+        resetForm();
+    }
+}
+
+
+
+
+
+function validate() {
+    isValid = true;
+  
+}
+    </script>
+</body>
+</html>

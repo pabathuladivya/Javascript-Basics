@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="formId">
+    <form name="formData" >
+        <label><b>Name:</b></label>    
+        <input type="text" id="ffname" ><span style="color: red" id="errorName"></span><br>
+        <label><b>Email:</b></label>
+        <input type="text" id="fename"><span style="color: red" id="errorEmail"></span><br>
+        <label><b>Phone:</b></label>
+        <input type="text" id="fphone"><span style="color: red" id="errorPhone"></span><br>
+        <label><b>DOB</b></label>
+        <input type="date" id="fdob"><span style="color: red" id="errorBirth"></span><br>
+        <label><b>URl</b></label>
+        <input type="url" id="furl"><span style="color: red" id="errorUrl"></span><br>
+        <label><b>Country</b></label>
+        <select id="fcountrySelect" onchange="makeSubmenu(this.value)">
+            <option value="" disabled selected>Choose State</option>
+            <option>India</option>
+            <option>Usa</option>
+            </select><span style="color: red" id="errorCountry"></span><br>
+            <label><b>City</b></label>
+            <select id="fcitySelect" >
+            <option value="" disabled selected>Choose City</option>
+            </select><span style="color: red" id="errorCity"></span>
+      </form>
+      <button type="submit" onclick="saveData()">Submit</button>
+    </div>
+      <br>
+      <br>
+      <div id="tableID">
+      <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>DOB</th>
+                <th>URl</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Action</th>
+             </tr>
+        </thead>
+        <tbody id="bodyData">
+        </tbody>
+      </table>
+    </div>
+    <script src="./taskForm.js"></script>
+</body>
+</html>

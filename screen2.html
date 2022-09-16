@@ -1,0 +1,163 @@
+<html>
+    <head>
+                 <script src="../js/form.js"></script>
+                 <p id="demo"></p>
+                 <p id="demo2"></p>
+                 <!-- <span id="message"></span> -->
+                 <!-- <p id="message1"></p> -->
+    </head>
+    <body>
+        <!-- <Form action="" onsubmit="validateform()"> -->
+        Name:<input type="text"  id="name" maxlength="20" required><span id="message" style="color:red"></span>
+        lname:<input type="text"  id="lname" required><span id="message1"  style="color:red"></span></br>
+        Age:<input type="text" maxlength="3" id="age" /><span id="message2"  style="color:red"></span>
+        <div>
+        Gender:<input type='radio' name='gender' value="Male" id="gen"/>Male
+           <input type='radio' name='gender' value="Female" id="gen1"/>Female<br/><br/>
+           <span id="message3" style="color:red"></span>
+           </div>
+           
+        country:<select name="slct1" id="slct1" onchange="App(this.id,'slct2')"> 
+           <option value="">country</option>
+            <option value="india">India</option>
+            <option value="america">America</option>
+        </select> <span id="message4"  style="color:red"></span></br>
+        state:<select name="slct2" id="slct2">
+
+        </select>
+           </div>
+           <script>
+            function App(s1,s2){
+            var s1 = document.getElementById(s1);
+            var s2  = document.getElementById(s2);
+
+            s2.innerHTML ="";   
+
+            if(s1.value == "india"){
+
+                var optionArray=['gujarath|Gujarath','telangana|Telangana','ap|Ap',
+                                'bangalore|Bangalore'];
+            }
+            else if(s1.value == 'america'){
+
+                var optionArray=['canada|Canada','chicago|Chicago'];
+            }
+            for(var option in optionArray){
+
+               var pair = optionArray[option].split("|");
+               var newoption = document.createElement("option");
+
+               newoption.value = pair[0];
+               newoption.innerHTML = pair[1];
+               s2.options.add(newoption);   
+            }
+            }
+           </script><br/>
+
+           Address:<input type="text area"  id="address"/><span id="message6" style="color:red"></span>
+           <input type="button" name="button" id="id" value="Add" onclick="add()"/>
+
+           <table id="tb1" border="2">
+            <tr>
+                 <th>A1</th>
+                 <th>A2</th>
+                 <th>A3</th>
+                 <th>A4</th>
+                 <th>A5</th>
+                 <th>A6</th>
+                 <th>A7</th>
+                 <th>Eligible</th>
+             </tr>
+         </table>
+
+        <!-- </Form> -->
+
+        <script>
+            //add row
+            function add(){
+
+               var name = document.getElementById("name").innerHTML;
+                if(name.length<3){
+                        document.getElementById("message").innerHTML="** please fill username";
+                        // return false;
+                    }
+                  var lname = document.getElementById("lname").innerHTML;
+                   if(lname.length<3){
+                        document.getElementById("message1").innerHTML="** please fill lname";
+                        // return false;
+                    }
+                   var age = document.getElementById("age").innerHTML;
+                    if(!( age > 1 && age<100 )){
+                        document.getElementById("message2").innerHTML="** please enter valid age";
+                        // return false;
+                    }
+                   var country = document.getElementById("slct1").innerHTML;
+                    if(country == ""){
+                    document.getElementById("message4").innerHTML="** please choose country"; 
+                   }
+                    var address = document.getElementById("address").innerHTML;
+                    if(address == ""){
+                        document.getElementById("message6").innerHTML="** please give address"; 
+                    }
+                 
+
+                var table = document.getElementById("tb1"),
+                    newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    cell4 = newRow.insertCell(3),
+                    cell5 = newRow.insertCell(4),
+                    cell6 = newRow.insertCell(5),
+                    cell7 = newRow.insertCell(6),
+                    cell8 = newRow.insertCell(7),
+
+
+                   
+                    
+
+                     name = document.getElementById("name").value;
+                   
+                    lname = document.getElementById("lname").value;
+                    
+                    age = document.getElementById("age").value;
+                   
+                   country = document.getElementById("slct1").value;
+                  
+                    state = document.getElementById("slct2").value;
+                    address = document.getElementById("address").value;
+                   
+
+                    var male = document.getElementById("gen");
+                     var female = document.getElementById("gen1");
+                     if(male.checked==true){
+               gender=document.getElementById("demo").innerHTML=male.value;
+              }else if(female.checked==true){
+               gender=document.getElementById("demo").innerHTML=female.value;
+              }  
+
+              if (male.checked==false && female.checked==false){
+                document.getElementById("message3").innerHTML="** please select gender";
+              }
+
+                      var age = document.getElementById("age").value;
+                      if(document.getElementById("age").value>=18){
+                     ages=document.getElementById("demo2").innerHTML=("true")
+                    }else {
+                       ages=document.getElementById("demo2").innerHTML=("false")
+                    }
+
+
+                    cell1.innerHTML = name;
+                    cell2.innerHTML = lname;
+                    cell3.innerHTML = age;
+                    cell4.innerHTML = gender;
+                    cell5.innerHTML = country;
+                    cell6.innerHTML = state;
+                    cell7.innerHTML = address;
+                    cell8.innerHTML = ages;
+
+            }
+        </script>
+        </body>
+        </html>

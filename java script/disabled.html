@@ -1,0 +1,102 @@
+<htl>
+    <head>
+        <title>disabling & enabling</title>
+        <!-- <p id="myBtn"> -->
+    </head>
+    <body>
+        <div id="myDiv">
+        E1:<input type="text" name="text" id="i1"/>
+        <button id="myBtn2" onclick="disableBtn()" value="selected Disabled">check</button></br></br>
+       <label class="hidden"></label> <button id="myBtn" class="hidden">slice</button>
+        E2:<label class="hidden"></label><input type="text" name="text" id="i2"/>
+        <label class="hidden"></label><button id="myBtn1" class="hidden">Update</button></br></br>
+        o/p:<input type="text" name="result" id="i3"/>
+    </div>
+
+    <script>
+        // function myFun(){
+        //     var x = document.getElementById("myDiv");
+        //     if (x.display === "none"){
+        //         x.display = "block";
+        //     }else {
+        //         x.display = "none";
+        //     }
+        // }
+
+        function showHide(){
+            //debugger
+            var btn = document.getElementById("myBtn2");
+            var hidden = document.getElementsByClassName("hidden");
+
+           
+                if(btn.checked){
+                    hidden.display = "inline";
+                } else {
+                    hidden.display = "none";
+                }
+            }
+        
+
+
+    // </script>
+
+        <!-- <script>
+            function disableBtn() {
+                //debugger
+                var btn = document.getElementById("myBtn").value;
+                var btn1 = document.getElementById("myBtn1").value;
+
+                if(btn && btn1){
+                    document.getElementById("myBtn").disabled = true;
+                }else {
+                    document.getElementById("myBtn").disabled = false;
+                }
+            }
+            </script> -->
+
+        <!-- <script>
+            function toggleButton()
+            {
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+ 
+                if (username && password) {
+                    document.getElementById('submitButton').disabled = true;
+                } else {
+                    document.getElementById('submitButton').disabled = false;
+                }
+            }
+        </script>
+    
+        <div>
+            <form action="/submit.php" method="post">
+                Username:<input type="text" name="username" id="username" onchange="toggleButton()">
+                Password:<input type="password" name="password" id="password"  onchange="toggleButton()">
+                <input id="submitButton" type="submit" value="Submit" disabled/>
+            </form>
+        </div> -->
+
+
+        <script>
+           
+               function disableBtn() {
+               document.getElementById("myBtn").disabled = true;
+
+               document.getElementById("i2").disabled = true;
+
+               document.getElementById("myBtn1").disabled = true;
+            }
+
+        //     function disableButton() {
+  
+        //     document.getElementById("theButton").disabled = true;
+        // }
+
+        //        function myFun(){
+
+        //        }
+
+        </script>
+            
+    </body>
+</html>

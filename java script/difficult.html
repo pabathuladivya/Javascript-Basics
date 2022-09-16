@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>difficult</title>
+    </head>
+    <body>
+        <!-- First Name:<input type="text" name="fname" id="fname"><br><br>
+        Last Name:<input type="text" name="lname" id="lname"><br><br>
+        Age:<input type="text" name="age" id="age"><br><br>
+        <button onclick="editRow();">Edit Row</button><br><br> -->
+
+        E1:<input type="text" name="text" id="i1"/>
+        <button type="button" value="selected Disabled">check</button></br></br>
+        <button onclick="removeRow();">slice</button>
+        E2:<input type="text" name="text" id="i2"/>
+        <button onclick="editRow()">Update</button></br></br>
+        o/p:<input type="text" name="result" id="i3"/>
+        
+        <table id="table" border="1">
+            
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+            
+            <tr>
+                <td>frooty</td>
+                <td>ccc</td>         
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>lilly</td>
+                <td>dd</td>
+                <td>20</td>
+            </tr>
+            
+            <tr>
+                <td>rikki</td>
+                <td>ee</td>
+                <td>30</td>
+            </tr>
+            
+            <tr>
+                <td>karthik</td>
+                <td>ff</td>
+                <td>40</td>
+            </tr>
+            
+            <tr>
+                <td>BB</td>
+                <td>gg</td>
+                <td>50</td>
+            </tr>
+            
+        </table>
+        
+        
+        <script> 
+            
+            // get selected row
+            // display selected row data in text input
+            
+            var table = document.getElementById("table"),rIndex;
+            
+            for(var i = 1; i < table.rows.length; i++)
+            {
+              //  debugger
+                table.rows[i].onclick = function()
+                {
+                    rIndex = this.rowIndex;
+                    console.log(rIndex);
+                    
+                    document.getElementById("i2").value = this.cells[0].innerHTML;
+                    // document.getElementById("i2").value = this.cells[1].innerHTML;
+                    // document.getElementById("age").value = this.cells[2].innerHTML;
+                };
+            }
+            
+            
+           // edit the row    
+            function editRow()
+            {
+                
+                table.rows[rIndex].cells[0].innerHTML = document.getElementById("i2").value;
+                // table.rows[rIndex].cells[1].innerHTML = document.getElementById("i2").value;
+                // table.rows[rIndex].cells[2].innerHTML = document.getElementById("age").value;
+            }
+
+            function removeRow(){
+                table.deleteRow(rindex);
+
+            } 
+            
+        </script>    
+        
+    </body>
+</html>

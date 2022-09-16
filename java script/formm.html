@@ -1,0 +1,88 @@
+<html>
+    <head></head>
+    <body>
+        <p id="table"></p>
+         Name:<input type="text" name="sname" id="sname"/><br/>
+        lastName:<input type="text" name="lname" id="lname"/><br/>
+          Age:<input type="text" name="age" id="age"/><br/>
+        gender:<input type="radio" name="gender" id="m"/>male
+        <input type="radio" name="gender" id="f"/>female<br/>
+        country : <select id="country">
+            <option value="Canada">United States</option>
+            <option value="India">India</option>
+            <option value="Australia">Australia</option>
+        </select>
+        state:<select type="text" id="state"></select><br/>
+        address:<input type="text" id="state"/><br/>
+        <button onclick="addName()">Add</button>
+
+
+        <table border="3">
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>gender</th>
+                <th>country</th>
+                <th>state</th>
+                <th>Address</th>
+                </tr>
+            </thead>
+        </table>
+
+
+
+        <script>
+            function addName(){
+                let sname = document.getElementById("sname").value;
+                let lname = document.getElementById("lname").value;
+                let age = document.getElementById("age").value;
+                let gender = document.getElementById("gender").value;
+                let country = document.getElementById("country").value;
+                let state = document.getElementById("state").value;
+                let address = document.getElementById("address").value;
+                let table = document.getElementsByTagName("table")[0];
+                var newRow = table.insertRow(0);
+
+                var cel1 = newRow.insertCell(0);
+                var cel2 = newRow.insertCell(1);
+                var cel3 = newRow.insertCell(2);
+                var cel4 = newRow.insertCell(3);
+                var cel5 = newRow.insertCell(4);
+                var cel6 = newRow.insertCell(5);
+                var cel7 = newRow.insertCell(6);
+
+                cel1.innerHTML = sname;
+                cel2.innerHTML = lname;
+                cel3.innerHTML = age;
+                cel3.innerHTML = gender;
+                cel4.innerHTML = country;
+                cel5.innerHTML = state;
+                cel6.innerHTML = address;
+            }                                                                      
+        </script>
+
+        <p id="sele"
+
+<script>
+    var stateObject = {
+        "India" : {"Gujarat":["surat","rajkot"],
+        "Goa" : ["East Goa","West Goa"],
+    },
+    "Australia" : {
+        "south australia" : ["Adelaide", "Whyalla"],
+    },
+    "Canada": {
+"Alberta": ["Edmonton", "Beaumont"],
+"Columbia": ["Anza", "Campamento"]
+},
+    }
+     
+    var selectCountry = document.getElementById("country").value;
+    var seletState = document.getElementById("state").value;
+    var selectedlist = document.getElementById()
+    
+    </script>
+    </body>
+</html>

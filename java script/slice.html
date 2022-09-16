@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>difficult</title>
+        <p id="demo"></p>
+    </head>
+    <body>
+
+        
+        E1:<input type="text" name="text" id="i1"/>
+        <button>check</button></br></br>
+        <button>slice</button>
+        E2:<input type="text" name="text" id="i3"/>
+        <button onclick="myFun()">Update</button></br></br>
+        o/p:<input type="text" name="result" id="i2"/>
+
+        
+        <table border="4" id="show">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>age</th>
+                    <th>gender</th>
+                </tr>
+                <tr>
+                    <td>balu</td>
+                    <td>18</td>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <td>Sri</td>
+                    <td>19</td>
+                    <td>Female</td>
+                </tr>
+                <tr>
+                    <td>kranthi</td>
+                    <td>20</td>
+                    <td>Female</td>
+                </tr>
+            </thead>
+        </table>
+       
+
+
+        <script>
+            function myFun(){
+                debugger
+            var a = document.getElementById(i1).value;
+            var b = document.getElementById(i3).value;
+            var result = a.replace(b);
+            document.getElementById("show").innerHTML=result;
+            }
+        </script>
+    </body>
+</html>

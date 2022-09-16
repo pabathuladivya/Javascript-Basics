@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>form</title>
+    </head>
+    <body>
+        <p id="details"></p>
+        Name:<input type="text" name="name"/></br>
+        Last Name:<input type="text" name="name"/></br>
+        Age:<input type="number" name="num"/></br>
+        gender:<input type="radio" name="gender" value="male">Male</input>
+        <input type="radio" name="gender" value="female">female</input></br>
+        country : <select type="country" name="country"></select>
+        state : <select type="state" name="state"></select></br>
+        Address : <input type="text area"/></br>
+        <button onclick="">submit</button>
+
+        <table border="3">
+            <thead>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>gender</th>
+                <th>country</th>
+                <th>state</th>
+                <th>Address</th>
+            </thead>
+        </table>
+
+        <script>
+            function stuForm(){
+                var name = document.details.name.value;
+
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>difficult task</title>
+        
+    </head>
+    <body>
+        <div id="table"></div>
+        E1:<input type="text" name="text" id="i1"/>
+        
+        <button id="myBtn2" onclick="check()" value="selected Disabled">check</button></br></br>
+
+      <button id="btnSlice" style="display:none">slice</button>
+
+        E2:<input type="text" name="text" id="i2" style="display:none;"/>
+
+        <button id="btnUpdate" onclick="editRow()" style="display:none;">Update</button></br></br>
+
+        o/p:<input type="text" name="result" id="i3"/>
+
+        <script>
+        //      function DisableBtn(){
+        // document.getElementById("btnSlice").disabled = true;
+        // document.getElementById("i1").value="";
+        // document.getElementById("i3").value="invalid"
+
+        // document.getElementById("i2").disabled = true;
+
+        // document.getElementById("btnUpdate").disabled = true;
+
+        // document.getElementById("myBtn").disabled = true;
+        // document.getElementById("myBtn1").disabled= true;
+        // document.getElementById("i1").value="";
+        // document.getElementById("myBtn").disabled = fasle;
+        // document.getElementById("myBtn1").disabled=false;
+        // document.getElementById("i3").value="invalid";
+
+    //}
+
+    
+    function check()
+    {    
+        //debugger
+    var input = document.getElementById("i1").value; 
+
+    if(input !== ""){
+
+    for (var i = 0; i<myArray.length; i++){
+        if(input == myArray[i].name){
+            document.getElementById("i2").style.display ="block";
+            document.getElementById("btnSlice").style.display ="block";
+            document.getElementById("btnUpdate").style.display ="block";
+            break;
+        }else{
+            document.getElementById("i3").value = "invalid";
+            document.getElementById("i2").style.display = "none";
+            document.getElementById("btnSlice").style.display = "none";
+            document.getElementById("btnUpdate").style.display = "none";
+        }
+    }
+}
+
+}
+
+
+function checked(){
+    debugger
+    var input = document.getElementById("i2").innerHTML;
+
+    if(input == []){
+
+        for (var i = name-1; i < input.name; i--){
+            if(input.name=="true"){
+                document.getElementById("btnSlice").value="delete the name";
+            }else {
+                 document.getElementById("btnSlice").value="invalid";
+            }
+        }
+    }
+}
+        </script>
+
+        <script>
+
+          
+        //       var input = document.getElementById("i2"),rIndex;
+            
+        //     for(var i = 1; i < input.rows.length; i++)
+        //     {
+        //       //  debugger
+        //         table.rows[i].onclick = function()
+        //         {
+        //             rIndex = this.rowIndex;
+        //             console.log(rIndex);
+                    
+        //             document.getElementById("i2").value = this.cells[0].innerHTML;
+        //             // document.getElementById("i2").value = this.cells[1].innerHTML;
+        //             // document.getElementById("age").value = this.cells[2].innerHTML;
+        //         };
+        //     }
+        
+                 
+            
+        //    // edit the row    
+        //     function editRow()
+        //     {
+                
+        //         table.rows[rIndex].cells[0].innerHTML = document.getElementById("i2").value;
+        //         // table.rows[rIndex].cells[1].innerHTML = document.getElementById("i2").value;
+        //         // table.rows[rIndex].cells[2].innerHTML = document.getElementById("age").value;
+        //     }
+        </script>
+
+        <script>
+
+        </script>
+
+<script src="../java script/list.js"></script>
+    
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <p id="demo"></p>
+        <body>
+            Enter Age : <input type="text" id="n1"/>
+
+            <script>
+                function Age(){
+                    if(document.getElementById("n1").value>=18){
+                      document.getElementById("demo").innerHTML=("true")
+                    }else {
+                        document.getElementById("demo").innerHTML=("false")
+                    }
+                }
+            </script>
+            <button type="button" onclick="Age()">change</button>
+        </body>
+    </head>
+</html>

@@ -1,0 +1,44 @@
+<html>
+    <head></head>
+    <body>
+        <table cellpadding="2" cellspacing="2">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+                <tbody id="tableData"></tbody>
+            </table>
+            <script>
+                var students = [
+                    {
+                        name: "sai",
+                        age:  21,
+                        status: "Active"
+                    },
+                    {
+                        name: "John",
+                        age:  28,
+                        status: "Inactive"
+                    },
+                    {
+                        name: "venkat",
+                        age:  18,
+                        status: "Active"
+                    }
+                ];
+                var k = '<tbody>'
+                for(i = 0;i < students.length; i++){
+                    k+= '<tr>';
+                    k+= '<td>' + students[i].name + '</td>';
+                    k+= '<td>' + students[i].age + '</td>';
+                    k+= '<td>' + students[i].status + '</td>';
+                    k+= '</tr>';
+                }
+                k+='</tbody>';
+                document.getElementById('tableData').innerHTML = k;
+                </script>
+                </body>
+                </html>

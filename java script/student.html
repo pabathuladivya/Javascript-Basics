@@ -1,0 +1,49 @@
+<html>
+    <head></head>
+    <body>
+        <p id="table"></p>
+        student Name:<input type="text" name="sname" id="sname"/><br/>
+        Marks:<input type="text" name="smarks" id="smarks"/><br/>
+        P/F:<input type="text" name="spf" id="spf"/><br/>
+        <button onclick="addname()">Add</button>
+       <table id="table1">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Marks</th>
+                    <th>P/F</th>
+                </tr>
+            </thead>
+        </table>
+        <script src="../java script/student.js"></script>
+        <script>
+            function addname(){
+                let sname = document.getElementById("sname").value;
+                let smarks = document.getElementById("smarks").value;
+                let spf = document.getElementById("spf").value;
+                let table = document.getElementsByTagName("table")[0];
+                var newRow = table.insertRow(0);
+
+                var cel1 = newRow.insertCell(0);
+                var cel2 = newRow.insertCell(1);
+                var cel3 = newRow.insertCell(2);
+
+                cel1.innerHTML = sname;
+                cel2.innerHTML = smarks;
+                cel3.innerHTML = spf;
+            } 
+                                                                                 
+        </script>
+        <script>
+            var stateObject = {
+                "India" : {"Gujarat":["surat","rajkot"],
+                "Goa" : ["East Goa","West Goa"],
+            },
+            "Australia" : {
+                "south australia" : ["Adelaide", "Whyalla"],
+            }
+            }
+        
+        </script>
+    </body>
+</html>

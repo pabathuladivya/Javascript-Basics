@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>form</title>
+        <p id="p1"></p>
+    </head>
+    <body>
+        name : <input type="text" id="text"/></body></html></br>
+        password:<input type="password" id="text1"/></br>
+        gender:<input type="radio" name="gender" id="m">Male</input>
+        <input type="radio" name="gender" id="f">female</input>
+        <input type="submit" onclick="practice()"></button>
+
+        <script>
+            function practice(){
+                var a = document.getElementById("text").value;
+                var b = document.getElementById("text1").value;
+                var c = document.getElementById("m").value;
+                var d = document.getElementById("f").value;
+                var e = a+b+(c,d);
+                // document.getElementById("p1").innerHTML=e;
+                console.log(e);
+            }
+        </script>
+    </body>
+</html>

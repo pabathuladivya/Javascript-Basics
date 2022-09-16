@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <body>
+            <h1>hello world </h1>
+            <script>
+                let num = 23;
+                let name = "ziraff";
+
+                // console.log("the num is "+num+" the name is "+name+"")
+
+                console.log(`the num is ${num} the name is ${name}`)
+
+                let marks = 60;
+                if (marks>=45){
+                    console.log("b grade");
+                }else{
+                    console.log("fail")
+                }
+
+                let stumarks = 80;
+                if (stumarks>=75){
+                    console.log("b grade")
+                }else if (stumarks<=60){
+                    console.log("c grade")
+                }else if (stumarks<=55){
+                    console.log("d grade")
+                }else {
+                    console.log("fail")
+                }
+
+                let status=60;
+
+                switch(status)
+                {
+                    case 1 :{       
+                        console.log("good status"); 
+                        // break;
+                    }
+                    case 2 :{
+                        console.log("bad status");
+                        // break;
+                    }
+                    default:{
+                       console.log("no status");
+                    }
+                }
+
+                //while loop
+
+                let disnep = 40;
+
+                while(disnep<=30){
+                    console.log(disnep);
+                    disnep=disnep+1;
+                }
+
+                let a = 0;
+                let b = 0;
+
+                a = ++b;
+                console.log(a,b);
+
+                //Arrays
+
+                let names = ["aaa","bbb","ccc","ddd"];
+                console.log(names[0]);
+                console.log(names[-1]);
+
+                let n=0;
+
+                while(n<=4){
+                    console.log(names[n]);
+                    n++;
+                }
+
+                let namess = ["aaaa","bbbb","cccc","dddd","eeee"]
+
+                let j = 0;
+
+                while(j<namess.length){
+                    console.log(namess[j])
+                    j++;
+                }
+            </script> 
+        </body>
+    </head>
+</html>
